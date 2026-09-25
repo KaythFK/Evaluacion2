@@ -30,9 +30,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'delegacionesApp',
-    'desempenoApp',
-    'agendaApp',
     'actividadesApp',
+    'agendaApp',
+    'funcionarioApp',
 ]
 
 MIDDLEWARE = [
