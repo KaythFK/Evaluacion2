@@ -1,0 +1,43 @@
+/* Colores Institucionales Oficiales - La Serena */
+.sidebar-sgr { background-color: #8B1D19; color: white; } /* Rojo Oscuro */
+.header-sgr { background-color: #C41230; height: 100px; } /* Rojo Heráldico */
+.footer-sgr { background-color: #000000; color: white; font-size: 0.85rem; }
+
+/* Ajustes de los enlaces del menú */
+.nav-link { color: white; font-weight: 500; margin-bottom: 10px; }
+.nav-link:hover { color: #f0f0f0; background-color: rgba(255,255,255,0.1); border-radius: 5px; }
+
+/* Paneles rojos con bordes redondeados */
+.bg-panel-rojo {
+    background-color: #C41230; /* Rojo Heráldico */
+    border-radius: 15px;
+    padding: 20px;
+}
+
+/* Botones naranjas del menú */
+.btn-naranja {
+    background-color: #e9950b;
+    color: #000;
+    font-weight: 700;
+    font-size: 1.25rem; 
+    border-radius: 15px;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+    transition: background-color 0.3s;
+}
+
+.btn-naranja:hover {
+    background-color: #cf8208;
+    color: #000;
+}
+
+/* Fijar altura uniforme para el carrusel y evitar saltos */
+.carousel-item img {
+    height: 350px; 
+    object-fit: cover; 
+    object-position: center; 
+}
+
+
