@@ -1,15 +1,15 @@
 {% extends 'funcionario/base.html' %}
 {% load static %}
 
-{% block title %}Delegaciones - Sistema Municipal{% endblock %}
+{% block title %}Directorio de Funcionarios{% endblock %}
 
 {% block menu_lateral %}
 <ul class="nav flex-column gap-4 mt-4">
     <li class="nav-item text-center">
-        <a class="nav-link text-white" href="{% url 'inicio' %}">Inicio</a>
+        <a class="nav-link text-white fw-bold" href="{% url 'inicio' %}">Inicio</a>
     </li>
     <li class="nav-item text-center">
-        <a class="nav-link text-white fw-bold" href="{% url 'delegaciones' %}">Delegaciones</a>
+        <a class="nav-link text-white" href="{% url 'delegaciones' %}">Delegaciones</a>
     </li>
     <li class="nav-item text-center">
         <a class="nav-link text-white" href="javascript:void(0);">Noticias</a>
@@ -18,17 +18,15 @@
 {% endblock %}
 
 {% block cabecera %}
-<h3 class="text-white fw-bold m-0">Gestión de Delegaciones Municipales</h3>
+<h3 class="text-white fw-bold m-0">Gestión de Personal</h3>
 {% endblock %}
 
 {% block contenido %}
 <div class="container mt-5">
-    
-
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h4 class="fw-bold" style="color: #8B1D19;">Listado de delegaciones</h4>
+        <h4 class="fw-bold" style="color: #8B1D19;">Directorio de Funcionarios</h4>
         <button class="btn text-white fw-bold" style="background-color: #C41230;">
-            + Nueva Delegación
+            + Nuevo Funcionario
         </button>
     </div>
 
@@ -37,19 +35,21 @@
             <thead class="table-dark">
                 <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">Nombre de Delegación</th>
-                    <th scope="col">Dirección</th>
-                    <th scope="col">Encargado/a</th>
+                    <th scope="col">Nombre Completo</th>
+                    <th scope="col">Correo Corporativo</th>
+                    <th scope="col">Cargo</th>
+                    <th scope="col">Delegación</th>
                     <th scope="col" class="text-center">Acciones</th>
                 </tr>
             </thead>
             <tbody>
-                {% for delegacion in delegaciones %}
+                {% for funcionario in funcionarios %}
                 <tr>
-                    <th scope="row">{{ delegacion.id_delegacion }}</th>
-                    <td>{{ delegacion.nombre }}</td>
-                    <td>{{ delegacion.calle }} #{{ delegacion.numero_calle }}</td>
-                    <td>ID Responsable: {{ delegacion.responsable }}</td>
+                    <th scope="row">{{ funcionario.id_funcionario }}</th>
+                    <td>{{ funcionario.nombres }} {{ funcionario.apellido_paterno }} {{ funcionario.apellido_materno|default_if_none:"" }}</td>
+                    <td>{{ funcionario.correo }}</td>
+                    <td>{{ funcionario.id_cargo.nombre|default:"No asignado" }}</td>
+                    <td>{{ funcionario.id_delegacion.nombre|default:"No asignada" }}</td>
                     <td class="text-center">
                         <button class="btn btn-sm btn-outline-primary">Ver</button>
                         <button class="btn btn-sm btn-outline-secondary">Editar</button>
@@ -57,14 +57,13 @@
                 </tr>
                 {% empty %}
                 <tr>
-                    <td colspan="5" class="text-center text-muted py-4">
-                        No hay delegaciones registradas.
+                    <td colspan="6" class="text-center text-muted py-4">
+                        No hay funcionarios registrados.
                     </td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
     </div>
-
 </div>
 {% endblock %}
