@@ -30,8 +30,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'actividadesApp',
-    'funcionariosApp',
-    'tuboApp',
+    'funcionarioApp',
+    'agendaApp',
     'delegacionesApp',
 ]
 
