@@ -7,5 +7,7 @@ urlpatterns = [
     path('inicio/', views.inicio, name='inicio'),
     path('delegaciones/', include('delegacionesApp.urls')),
     path('funcionario/', include('funcionarioApp.urls')),
-    path('', views.main, name='main')
+    path('', views.main, name='main'),
+    path('tubo/', include('agendaApp.urls')),
+    path('actividades/', include('actividadesApp.urls'))
 ]
